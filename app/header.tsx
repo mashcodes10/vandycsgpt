@@ -1,10 +1,11 @@
-'use client'
+
 
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { SignInButton, UserButton } from "@clerk/nextjs"
 import { Authenticated, Unauthenticated } from "convex/react"
 import Image from "next/image"
+import { HeaderActions } from "./header-actions"
 
 export function Header() {
     return <div className="bg-slate-900 py-4">
@@ -15,18 +16,11 @@ export function Header() {
       VandyCSGPT
         
         </div>      
-      <div>
-      <Unauthenticated>
-        <SignInButton />
-      </Unauthenticated>
-      <Authenticated>
+        <div className="flex gap-4 items-center">
         
-        <div className="flex gap-4">
-        <ModeToggle />
-        <UserButton />
-        </div>
-
-        </Authenticated> </div>
+      <ModeToggle />
+      <HeaderActions />
+       </div>
         </div>
     </div>
 }
